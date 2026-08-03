@@ -9,6 +9,7 @@ type ContactPanelProps = {
   address: string[];
   email: string;
   phone: string;
+  showDetails?: boolean;
 };
 
 export function ContactPanel({
@@ -17,9 +18,10 @@ export function ContactPanel({
   address,
   email,
   phone,
+  showDetails = true,
 }: ContactPanelProps) {
   return (
-    <div className="grid gap-px bg-border/70 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+    <div className={`grid gap-px bg-border/70 ${showDetails ? "lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]" : ""}`}>
       <div className="bg-background p-6 sm:p-8">
         <h3 className="font-heading text-2xl">{title}</h3>
         <p className="mt-4 max-w-xl text-sm leading-7 text-muted-foreground sm:text-base">
@@ -34,7 +36,7 @@ export function ContactPanel({
           </Button>
         </div>
       </div>
-      <div className="bg-background p-6 sm:p-8">
+      {showDetails ? <div className="bg-background p-6 sm:p-8">
         <div className="grid gap-6 text-sm leading-7 text-muted-foreground">
           <div>
             <p className="mb-2 text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
@@ -63,7 +65,7 @@ export function ContactPanel({
             </address>
           </div>
         </div>
-      </div>
+      </div> : null}
     </div>
   );
 }

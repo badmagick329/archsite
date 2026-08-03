@@ -136,3 +136,9 @@
     cursor: pointer;
   }
 }
+
+@keyframes unicon-ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}

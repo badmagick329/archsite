@@ -2,6 +2,7 @@ export const homeContent = {
   hero: {
     eyebrow: "Lahore, Pakistan | Since 1975",
     title: "Architecture, engineering, and planning.",
+    cta: "Explore Our Work",
     description:
       "A Lahore-based consulting practice with a long-standing record in design, implementation, and multidisciplinary project delivery.",
     facts: [
@@ -21,9 +22,9 @@ export const homeContent = {
     label: "Who We Are",
     title: "A long-standing practice with architecture, engineering, and planning expertise under one roof.",
     description:
-      "The public site describes Unicon as an A&E consulting company active since 1975. This draft carries that identity forward in a more focused and contemporary way.",
+      "Unicon is a Lahore-based architecture and engineering consulting practice active since 1975.",
     body:
-      "Unicon is presented as a Lahore-based practice working across architecture, urban and regional planning, civil and structural coordination, environmental systems, and implementation support. The visual frame stays quiet so the portfolio and institutional credibility remain central.",
+      "Unicon brings together architecture, urban and regional planning, civil and structural coordination, environmental systems, and implementation support for complex projects across Pakistan.",
     cta: "Read the Studio Profile",
   },
   projects: {
@@ -32,20 +33,20 @@ export const homeContent = {
       "Project typologies previewed through public work already referenced on the current Unicon site.",
     description:
       "Rather than leading with a long service list, the homepage points visitors toward project categories such as architecture, regional planning, conservation, and project management.",
-    cta: "View All Project Types",
+    cta: "View All Projects",
   },
   collaborations: {
     label: "Clients / Collaborations",
     title: "A place to signal institutional clients and working relationships around the practice.",
     description:
-      "The current site shows a broad client base. For now, this section uses recognizable placeholder categories and client-facing relationships rather than generic studio language.",
+      "Experience across public institutions, educational clients, financial organisations, planning authorities, and private-sector development.",
     items: [
-      "Public Sector Institutions",
-      "Educational Clients",
-      "Financial Institutions",
-      "Planning Authorities",
-      "International Agencies",
-      "Private Sector Developers",
+      "UNICEF",
+      "UNESCO",
+      "USAID",
+      "World Bank",
+      "National Highway Authority",
+      "Capital Development Authority",
     ],
   },
   contact: {

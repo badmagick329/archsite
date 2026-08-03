@@ -4,16 +4,16 @@ export const contactContent = {
     title:
       "A direct and credible entry point for project, institutional, or collaboration inquiries.",
     description:
-      "The first release keeps this page informational rather than form-driven, using the public details currently listed on Unicon's website.",
+      "For project, institutional, or collaboration inquiries with Unicon Consulting.",
     asideTitle: "Inquiry Types",
     asideBody:
       "New commissions, planning studies, institutional consultations, research conversations, and early-stage feasibility discussions.",
   },
   contactSection: {
     label: "Get in Touch",
-    title: "A simple contact panel is enough for v1.",
+    title: "Get in touch with the practice.",
     description:
-      "This draft uses Unicon's currently published office details while keeping the surrounding language easy to refine.",
+      "Tell us a little about the project, its location, and the work you need support with.",
     panel: {
       title: "Start an Inquiry",
       description:
@@ -25,13 +25,13 @@ export const contactContent = {
   },
   responseSection: {
     label: "Response",
-    title: "Set expectations without building a full workflow.",
+    title: "How we can help.",
     description:
-      "This area can later expand into office hours, project onboarding notes, or client submission guidance.",
+      "Unicon works with public, private, educational, and institutional clients across a range of project types.",
     items: [
-      "A future note here can explain expected response timing for new commissions, planning studies, and institutional inquiries.",
-      "A second panel can clarify that the office is based in Lahore while the practice works across multiple regions and project types.",
-      "A third panel can outline the kinds of architecture, planning, engineering, conservation, or project management commissions currently being prioritised.",
+      "New commissions, planning studies, and institutional consultations.",
+      "A Lahore-based office with experience across regions and project scales.",
+      "Architecture, planning, engineering, conservation, and project management support.",
     ],
   },
 } as const;

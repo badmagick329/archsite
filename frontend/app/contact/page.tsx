@@ -1,26 +1,20 @@
 import { contactContent } from "@/app/contact/content";
 import { ContactResponseGrid } from "@/app/contact/_components/contact-response-grid";
 import { ContactPanel } from "@/components/contact-panel";
-import { PageHeader } from "@/components/page-header";
+import { ImageBanner } from "@/components/image-banner";
 import { SectionShell } from "@/components/section-shell";
 import { SiteShell } from "@/components/site-shell";
+import { uniconImages } from "@/lib/unicon-images";
 
 export default function ContactPage() {
   return (
     <SiteShell currentPath="/contact">
       <main>
-        <PageHeader
+        <ImageBanner
           eyebrow={contactContent.header.eyebrow}
-          title={contactContent.header.title}
-          description={contactContent.header.description}
-          aside={
-            <>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
-                {contactContent.header.asideTitle}
-              </p>
-              <p className="mt-3">{contactContent.header.asideBody}</p>
-            </>
-          }
+          title="Start a conversation."
+          description="For new commissions, planning studies, and collaborations."
+          image={uniconImages.engineering}
         />
 
         <SectionShell
@@ -34,6 +28,7 @@ export default function ContactPage() {
             email={contactContent.contactSection.panel.email}
             phone={contactContent.contactSection.panel.phone}
             address={[...contactContent.contactSection.panel.address]}
+            showDetails={false}
           />
         </SectionShell>
 

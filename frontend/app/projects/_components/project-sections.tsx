@@ -1,5 +1,4 @@
 import { ProjectCard } from "@/components/project-card";
-import { SectionShell } from "@/components/section-shell";
 import { type ProjectType } from "@/lib/site-data";
 
 type ProjectSectionsProps = {
@@ -7,19 +6,5 @@ type ProjectSectionsProps = {
 };
 
 export function ProjectSections({ projectTypes }: ProjectSectionsProps) {
-  return (
-    <>
-      {projectTypes.map((projectType) => (
-        <SectionShell
-          key={projectType.slug}
-          id={projectType.slug}
-          label={projectType.label}
-          title={projectType.title}
-          description={projectType.summary}
-        >
-          <ProjectCard projectType={projectType} />
-        </SectionShell>
-      ))}
-    </>
-  );
+  return <section className="mx-auto w-full max-w-7xl px-6 py-12 lg:px-10 lg:py-16"><div className="grid gap-6 lg:grid-cols-2">{projectTypes.map((projectType) => <ProjectCard key={projectType.slug} projectType={projectType} />)}</div></section>;
 }

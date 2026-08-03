@@ -9,9 +9,9 @@ export function HomeProjectsPreview({
   projectTypes,
 }: HomeProjectsPreviewProps) {
   return (
-    <div className="grid gap-8">
+    <div className="grid gap-6 md:grid-cols-3">
       {projectTypes.slice(0, 3).map((projectType) => (
-        <ProjectCard key={projectType.slug} projectType={projectType} compact />
+        <ProjectCard key={projectType.slug} projectType={projectType} showLink />
       ))}
     </div>
   );

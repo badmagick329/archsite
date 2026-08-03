@@ -3,6 +3,7 @@ export type ProjectType = {
   title: string;
   label: string;
   summary: string;
+  imageKey: "architecture" | "conservation" | "interiors" | "engineering" | "delivery";
   project: {
     name: string;
     location: string;

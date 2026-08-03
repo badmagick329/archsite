@@ -1,25 +1,20 @@
 import { ArchiveList } from "@/app/research-publications/_components/archive-list";
 import { researchPublicationsContent } from "@/app/research-publications/content";
-import { PageHeader } from "@/components/page-header";
+import { ImageBanner } from "@/components/image-banner";
 import { SectionShell } from "@/components/section-shell";
 import { SiteShell } from "@/components/site-shell";
+import { uniconImages } from "@/lib/unicon-images";
 
 export default function ResearchPublicationsPage() {
   return (
     <SiteShell currentPath="/research-publications">
       <main>
-        <PageHeader
+        <ImageBanner
           eyebrow={researchPublicationsContent.header.eyebrow}
-          title={researchPublicationsContent.header.title}
-          description={researchPublicationsContent.header.description}
-          aside={
-            <>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-foreground">
-                {researchPublicationsContent.header.asideTitle}
-              </p>
-              <p className="mt-3">{researchPublicationsContent.header.asideBody}</p>
-            </>
-          }
+          title="Research, publications, and practice notes."
+          description="An evolving archive of public documentation from the practice."
+          image={uniconImages.architecture}
+          tone="strong"
         />
 
         <SectionShell

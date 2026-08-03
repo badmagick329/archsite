@@ -28,7 +28,7 @@ export function SectionShell({
               {label}
             </p>
           ) : null}
-          <h2 className="font-heading text-2xl leading-tight sm:text-3xl">
+          <h2 className="font-heading text-2xl font-medium leading-tight tracking-tight sm:text-3xl">
             {title}
           </h2>
           {description ? (

@@ -1,12 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import Image from "next/image";
+import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { type ReactNode, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { siteNavigation } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
+import { uniconImages } from "@/lib/unicon-images";
 
 type SiteShellProps = {
   children: ReactNode;
@@ -21,11 +23,15 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
       <header className="border-b border-border/70">
         <div className="mx-auto w-full max-w-7xl px-6 py-5 lg:px-10">
           <div className="flex items-center justify-between gap-6">
-            <Link
-              href="/"
-              className="font-heading text-xl uppercase tracking-[0.28em]"
-            >
-              Unicon Consulting
+            <Link href="/" className="relative block h-9 w-36 sm:h-10 sm:w-40">
+              <Image
+                src={uniconImages.logo.src}
+                alt={uniconImages.logo.alt}
+                fill
+                priority
+                sizes="160px"
+                className="object-contain object-left"
+              />
             </Link>
             <nav className="hidden items-center gap-6 text-xs font-semibold uppercase tracking-[0.18em] xl:flex">
               {siteNavigation.map((item) => {
@@ -83,11 +89,19 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
       </header>
       <div>{children}</div>
       <footer className="border-t border-border/70">
-        <div className="mx-auto flex w-full max-w-7xl flex-col gap-4 px-6 py-6 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between lg:px-10">
-          <p>Unicon Consulting Pvt. Ltd. | Lahore, Pakistan</p>
-          <p>
-            Architecture, engineering, planning, and research inquiries welcome.
-          </p>
+        <div className="bg-foreground text-background">
+          <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-10 sm:grid-cols-[1.1fr_1fr] lg:px-10 lg:py-14">
+            <div>
+              <div className="relative h-10 w-40 brightness-0 invert">
+                <Image src={uniconImages.logo.src} alt={uniconImages.logo.alt} fill sizes="160px" className="object-contain object-left" />
+              </div>
+              <p className="mt-5 max-w-md text-sm leading-7 text-background/80">Architecture, engineering, planning, and implementation support from Lahore.</p>
+            </div>
+            <div className="grid gap-5 text-sm leading-7 text-background/85 sm:grid-cols-2">
+              <div className="grid content-start gap-3"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-background/60">Contact</p><a className="flex items-center gap-3 hover:text-background" href="mailto:uniconconsulting@gmail.com"><Mail className="size-4 shrink-0" />uniconconsulting@gmail.com</a><a className="flex items-center gap-3 font-medium text-background underline underline-offset-4 hover:no-underline" href="tel:+924235711390"><Phone className="size-4 shrink-0" />+92 42 35711390-93</a></div>
+              <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-background/60">Office</p><address className="mt-3 flex items-start gap-3 not-italic"><MapPin className="mt-1 size-4 shrink-0" /><span>34-A Main Gulberg<br />Lahore, Pakistan</span></address></div>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
