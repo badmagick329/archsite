@@ -1,10 +1,10 @@
 export const homeContent = {
   hero: {
-    eyebrow: "Lahore, Pakistan | Since 1975",
-    title: "Architecture, engineering, and planning.",
-    cta: "Explore Our Work",
+    titleAccent: "50 years",
+    title: "of shaping places.",
     description:
-      "A Lahore-based consulting practice with a long-standing record in design, implementation, and multidisciplinary project delivery.",
+      "Architecture, engineering, and planning for the built environment across Pakistan.",
+    cta: "Explore Our Work",
     facts: [
       {
         title: "Practice",
@@ -41,12 +41,12 @@ export const homeContent = {
     description:
       "Experience across public institutions, educational clients, financial organisations, planning authorities, and private-sector development.",
     items: [
-      "UNICEF",
-      "UNESCO",
-      "USAID",
-      "World Bank",
-      "National Highway Authority",
-      "Capital Development Authority",
+      { label: "UNICEF", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/UNICEF_Logo.svg" },
+      { label: "UNESCO", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/UNESCO_logo.svg" },
+      { label: "USAID", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/USAID-Identity.svg" },
+      { label: "World Bank", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/The_World_Bank_logo.svg" },
+      { label: "National Highway Authority" },
+      { label: "Capital Development Authority" },
     ],
   },
   contact: {

@@ -30,17 +30,12 @@ export const whoWeAreContent = {
   },
   leadership: {
     title: "Leadership and professional team",
-    description: "A practice led by directors and supported by architects, engineers, project managers, and technical specialists.",
+    description: "A practice led by its CEO and supported by architects, engineers, project managers, and technical specialists.",
     items: [
       {
         title: "Parvez Latif Qureshi",
         role: "CEO / Director",
         body: "More than four decades of experience in planning, architecture, and management, including recognised conservation and large-scale development work.",
-      },
-      {
-        title: "Nadira Bashir",
-        role: "Director",
-        body: "Leadership across a multidisciplinary professional team working in architecture, engineering, project management, finance, and technical delivery.",
       },
     ],
   },

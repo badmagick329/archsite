@@ -39,6 +39,12 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-surface-architecture: var(--surface-architecture);
+  --color-surface-planning: var(--surface-planning);
+  --color-surface-engineering: var(--surface-engineering);
+  --color-surface-conservation: var(--surface-conservation);
+  --color-surface-interiors: var(--surface-interiors);
+  --color-surface-delivery: var(--surface-delivery);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -81,6 +87,12 @@
   --sidebar-ring: oklch(0.714 0.014 41.2);
   --background: oklch(1 0 0);
   --foreground: oklch(0.147 0.004 49.3);
+  --surface-architecture: oklch(0.948 0.035 57);
+  --surface-planning: oklch(0.947 0.026 95);
+  --surface-engineering: oklch(0.942 0.02 230);
+  --surface-conservation: oklch(0.947 0.045 76);
+  --surface-interiors: oklch(0.953 0.02 20);
+  --surface-delivery: oklch(0.944 0.028 145);
 }
 
 .dark {
@@ -115,6 +127,12 @@
   --sidebar-accent-foreground: oklch(0.986 0.002 67.8);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.547 0.021 43.1);
+  --surface-architecture: oklch(0.215 0.017 52);
+  --surface-planning: oklch(0.215 0.012 95);
+  --surface-engineering: oklch(0.205 0.011 230);
+  --surface-conservation: oklch(0.215 0.018 74);
+  --surface-interiors: oklch(0.215 0.011 20);
+  --surface-delivery: oklch(0.205 0.012 145);
 }
 
 @layer base {

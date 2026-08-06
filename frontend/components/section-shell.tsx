@@ -37,7 +37,7 @@ export function SectionShell({
             </p>
           ) : null}
         </div>
-        <div>{children}</div>
+        <div className="min-w-0">{children}</div>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@
   "packageManager": "pnpm@11.6.0",
   "scripts": {
     "dev": "pnpm --dir frontend dev",
+    "dev:network": "pnpm --dir frontend dev --hostname 0.0.0.0",
     "build": "pnpm --dir frontend build",
     "start": "pnpm --dir frontend start",
     "lint": "pnpm --dir frontend lint"

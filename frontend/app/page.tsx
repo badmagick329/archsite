@@ -15,11 +15,15 @@ export default function Home() {
   return (
     <SiteShell currentPath="/">
       <main>
-        <HomeHero slides={uniconImages.heroSlides} eyebrow={homeContent.hero.eyebrow} title={homeContent.hero.title} cta={homeContent.hero.cta} />
+        <HomeHero
+          slides={uniconImages.heroSlides}
+          titleAccent={homeContent.hero.titleAccent}
+          title={homeContent.hero.title}
+          description={homeContent.hero.description}
+          cta={homeContent.hero.cta}
+        />
 
-        <SectionShell
-          title="Five Decades of Practice"
-        >
+        <SectionShell title="Five Decades of Practice">
           <div className="grid gap-px bg-border/70 md:grid-cols-2">
             <div className="bg-background p-6 sm:p-8">
               <p className="text-sm leading-7 text-muted-foreground">
@@ -37,11 +41,11 @@ export default function Home() {
           </div>
         </SectionShell>
 
-        <SectionShell
-          title="Featured Projects"
-        >
+        <SectionShell title="Featured Projects">
           <div className="grid gap-8">
-            <HomeProjectsPreview projectTypes={projectsContent.projectTypes.slice(0, 3)} />
+            <HomeProjectsPreview
+              projectTypes={projectsContent.projectTypes.slice(0, 3)}
+            />
             <div className="flex justify-start">
               <Button asChild variant="outline">
                 <Link href="/projects">
@@ -53,18 +57,20 @@ export default function Home() {
           </div>
         </SectionShell>
 
-        <SectionShell
-          title="Clients and Collaborators"
-        >
+        <SectionShell title="Clients and Collaborators">
           <div>
             <NetworkStrip items={[...homeContent.collaborations.items]} />
-            <Button disabled variant="outline" className="mt-6" title="Client details will be added here">
+            <Button
+              disabled
+              variant="outline"
+              className="mt-6"
+              title="Client details will be added here"
+            >
               Learn More
               <ArrowRight className="size-4" />
             </Button>
           </div>
         </SectionShell>
-
       </main>
     </SiteShell>
   );

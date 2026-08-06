@@ -33,7 +33,7 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
                 className="object-contain object-left"
               />
             </Link>
-            <nav className="hidden items-center gap-6 text-xs font-semibold uppercase tracking-[0.18em] xl:flex">
+            <nav className="hidden items-center gap-6 text-xs font-semibold uppercase tracking-[0.18em] lg:flex">
               {siteNavigation.map((item) => {
                 const isActive = currentPath === item.href;
 
@@ -55,7 +55,7 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
               type="button"
               variant="outline"
               size="sm"
-              className="xl:hidden"
+              className="lg:hidden"
               aria-expanded={menuOpen}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen((open) => !open)}
@@ -65,7 +65,7 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
             </Button>
           </div>
           {menuOpen ? (
-            <nav className="mt-4 grid gap-px border border-border/70 bg-border/70 xl:hidden">
+            <nav className="mt-4 grid gap-px border border-border/70 bg-border/70 lg:hidden">
               {siteNavigation.map((item) => {
                 const isActive = currentPath === item.href;
 
