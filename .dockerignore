@@ -37,6 +37,9 @@ pnpm-debug.log*
 .idea
 .vscode
 
+# Local project and deployment files
+notes
+
 # Git
 .git
 .gitignore
