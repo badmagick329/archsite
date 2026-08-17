@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { ValueGrid } from "@/app/who-we-are/_components/value-grid";
+import { RecognitionList } from "@/app/who-we-are/_components/recognition-list";
 import { whoWeAreContent } from "@/app/who-we-are/content";
 import { ImageBanner } from "@/components/image-banner";
 import { ProfilePlaceholder } from "@/components/profile-placeholder";
@@ -19,42 +19,81 @@ export default function WhoWeArePage() {
           image={uniconImages.conservation}
         />
 
-        <section className="border-b border-border/70">
-          <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-12 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:px-10 lg:py-16">
-            <div className="relative min-h-72 overflow-hidden sm:min-h-96">
-              <Image src={uniconImages.architecture.src} alt={uniconImages.architecture.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" className="object-cover" style={{ objectPosition: uniconImages.architecture.position }} />
-            </div>
-            <div className="flex flex-col justify-center py-2 lg:px-6">
-              <h2 className="max-w-xl font-heading text-3xl font-medium leading-tight tracking-tight sm:text-4xl">{whoWeAreContent.overview.title}</h2>
-              <div className="mt-6 max-w-2xl space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
-                {whoWeAreContent.overview.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        <SectionShell
+          title={whoWeAreContent.background.title}
+          label={whoWeAreContent.background.label}
+          layout="stacked"
+          accent
+        >
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,0.95fr)] lg:gap-16">
+            <div>
+              <p className="max-w-3xl border-l-4 border-primary pl-5 text-sm font-medium leading-7 text-foreground sm:text-base sm:leading-8">
+                {whoWeAreContent.background.lead}
+              </p>
+              <div className="mt-8 max-w-3xl space-y-5 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+                {whoWeAreContent.background.paragraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
               </div>
             </div>
-          </div>
-        </section>
-
-        <SectionShell title={whoWeAreContent.capabilities.title}>
-          <ValueGrid items={whoWeAreContent.capabilities.items} />
-        </SectionShell>
-
-        <section className="border-b border-border/70">
-          <div className="mx-auto w-full max-w-7xl px-6 py-12 lg:px-10 lg:py-16">
-            <h2 className="font-heading text-3xl font-medium leading-tight tracking-tight sm:text-4xl">{whoWeAreContent.leadership.title}</h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-muted-foreground sm:text-base">{whoWeAreContent.leadership.description}</p>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {whoWeAreContent.leadership.items.map((person) => (
-                  <article key={person.title} className="grid overflow-hidden border border-border/70 bg-background sm:grid-cols-[minmax(11rem,0.34fr)_minmax(0,1fr)]">
-                    <ProfilePlaceholder className="min-h-48 sm:min-h-full" />
-                    <div className="p-6 sm:p-8">
-                    <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">{person.role}</p>
-                    <h3 className="mt-3 font-heading text-2xl">{person.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-muted-foreground">{person.body}</p>
-                    </div>
-                  </article>
-                ))}
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {[uniconImages.architecture, uniconImages.delivery].map((image) => (
+                <div key={image.src} className="relative min-h-64 overflow-hidden lg:min-h-72">
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 40vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover"
+                    style={{ objectPosition: image.position }}
+                  />
+                </div>
+              ))}
             </div>
           </div>
-        </section>
+          <p className="mt-10 max-w-5xl bg-primary px-6 py-7 font-heading text-xl leading-relaxed text-primary-foreground sm:px-8 sm:text-2xl lg:mt-14">
+            {whoWeAreContent.background.closing}
+          </p>
+        </SectionShell>
+
+        <SectionShell
+          title={whoWeAreContent.founder.title}
+          label={whoWeAreContent.founder.label}
+          layout="stacked"
+          accent
+          className="bg-muted/20"
+        >
+          <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.3fr)] lg:gap-14">
+            <ProfilePlaceholder className="min-h-80 border border-border/70 bg-background lg:min-h-[30rem]" />
+            <div className="space-y-5 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+              {whoWeAreContent.founder.introduction.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
+            </div>
+          </div>
+          <div className="mt-10 grid border-l border-t border-border/70 md:grid-cols-2 lg:mt-14">
+            {whoWeAreContent.founder.chapters.map((chapter, index) => (
+              <article key={chapter.title} className="border-b border-r border-border/70 bg-background p-6 sm:p-8">
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <h3 className="mt-4 font-heading text-2xl font-medium">{chapter.title}</h3>
+                <p className="mt-4 text-sm leading-7 text-muted-foreground">{chapter.body}</p>
+              </article>
+            ))}
+          </div>
+        </SectionShell>
+
+        <SectionShell
+          title={whoWeAreContent.recognition.title}
+          label={whoWeAreContent.recognition.label}
+          description={whoWeAreContent.recognition.description}
+          layout="stacked"
+          accent
+          className="border-b-0"
+        >
+          <RecognitionList items={whoWeAreContent.recognition.items} />
+        </SectionShell>
       </main>
     </SiteShell>
   );

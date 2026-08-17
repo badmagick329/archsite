@@ -24,10 +24,17 @@ export function Carousel({
   const [viewportRef, api] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
-  const paused = useRef(false);
+  const selectedIndexRef = useRef(0);
+  const pointerPaused = useRef(false);
+  const focusPaused = useRef(false);
+  const pageHidden = useRef(false);
 
   const selectSlide = useCallback(() => {
-    if (api) setSelectedIndex(api.selectedScrollSnap());
+    if (api) {
+      const index = api.selectedScrollSnap();
+      selectedIndexRef.current = index;
+      setSelectedIndex(index);
+    }
   }, [api]);
 
   useEffect(() => {
@@ -51,10 +58,32 @@ export function Carousel({
   useEffect(() => {
     if (!api || reducedMotion) return;
     const timer = window.setInterval(() => {
-      if (!paused.current) api.scrollNext();
+      if (!pointerPaused.current && !focusPaused.current && !pageHidden.current) {
+        api.scrollNext();
+      }
     }, interval);
     return () => window.clearInterval(timer);
   }, [api, interval, reducedMotion]);
+
+  useEffect(() => {
+    if (!api) return;
+
+    const handleVisibilityChange = () => {
+      pageHidden.current = document.hidden;
+
+      if (!document.hidden) {
+        window.requestAnimationFrame(() => {
+          api.reInit();
+          api.scrollTo(selectedIndexRef.current, true);
+          selectSlide();
+        });
+      }
+    };
+
+    handleVisibilityChange();
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    return () => document.removeEventListener("visibilitychange", handleVisibilityChange);
+  }, [api, selectSlide]);
 
   const goPrevious = () => api?.scrollPrev();
   const goNext = () => api?.scrollNext();
@@ -63,11 +92,11 @@ export function Carousel({
     <section
       aria-label={label}
       className={cn("relative overflow-hidden", className)}
-      onMouseEnter={() => (paused.current = true)}
-      onMouseLeave={() => (paused.current = false)}
-      onFocusCapture={() => (paused.current = true)}
+      onMouseEnter={() => (pointerPaused.current = true)}
+      onMouseLeave={() => (pointerPaused.current = false)}
+      onFocusCapture={() => (focusPaused.current = true)}
       onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) paused.current = false;
+        if (!event.currentTarget.contains(event.relatedTarget)) focusPaused.current = false;
       }}
     >
       <div ref={viewportRef} className="overflow-hidden">

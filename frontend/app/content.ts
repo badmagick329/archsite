@@ -3,37 +3,122 @@ export const homeContent = {
     titleAccent: "50 years",
     title: "of shaping places.",
     description:
-      "Architecture, engineering, and planning for the built environment across Pakistan.",
+      "Architecture, planning and engineering practice across Pakistan since 1975.",
     cta: "Explore Our Work",
-    facts: [
+  },
+  intro: {
+    paragraphs: [
+      "Founded in Lahore in 1975, Unicon has worked across a wide range of scales and contexts — from individual buildings and historic sites to institutional campuses, infrastructure, urban development and regional planning.",
+      "Over five decades, the practice has brought together architecture, planning, engineering and project implementation, working with public institutions, development organisations and private clients across Pakistan and beyond.",
+    ],
+    cta: "About Unicon",
+  },
+  practiceAreas: {
+    description:
+      "Integrated expertise across the built environment, from early planning and design through implementation and delivery.",
+    items: [
       {
-        title: "Practice",
-        description:
-          "Architecture and engineering consulting across planning, design, implementation, and project management.",
+        title: "Architecture",
+        disciplines: "Architectural Design · Interior Design",
+        imageKey: "architecture",
+        href: "/projects#architecture",
+        tone: "architecture",
       },
       {
-        title: "Location",
-        description:
-          "Registered in Lahore with work spanning civic, educational, commercial, conservation, and regional planning projects.",
+        title: "Planning",
+        disciplines:
+          "Urban Planning · Regional Planning · Master Planning · Urban Renewal",
+        imageKey: "conservation",
+        href: "/projects#urban-planning",
+        tone: "planning",
+      },
+      {
+        title: "Engineering",
+        disciplines: "Civil · Structural · Infrastructure · Building Services",
+        imageKey: "engineering",
+        href: "/projects#engineering-design",
+        tone: "engineering",
+      },
+      {
+        title: "Conservation",
+        disciplines: "Conservation · Restoration · Rehabilitation",
+        imageKey: "interiors",
+        href: "/projects#conservation",
+        tone: "conservation",
+      },
+      {
+        title: "Environment",
+        disciplines: "Environmental Planning · Environmental Assessment",
+        imageKey: "delivery",
+        href: "/projects",
+        tone: "environment",
+      },
+      {
+        title: "Project Delivery",
+        disciplines:
+          "Project Management · Construction Management · Supervision",
+        imageKey: "delivery",
+        href: "/projects#project-management",
+        tone: "delivery",
       },
     ],
   },
-  intro: {
-    label: "Who We Are",
-    title: "A long-standing practice with architecture, engineering, and planning expertise under one roof.",
+  featuredProjects: {
     description:
-      "Unicon is a Lahore-based architecture and engineering consulting practice active since 1975.",
-    body:
-      "Unicon brings together architecture, urban and regional planning, civil and structural coordination, environmental systems, and implementation support for complex projects across Pakistan.",
-    cta: "Read the Studio Profile",
-  },
-  projects: {
-    label: "Projects",
-    title:
-      "Project typologies previewed through public work already referenced on the current Unicon site.",
-    description:
-      "Rather than leading with a long service list, the homepage points visitors toward project categories such as architecture, regional planning, conservation, and project management.",
+      "Selected work across architecture, planning, conservation and project delivery.",
     cta: "View All Projects",
+    items: [
+      {
+        name: "SOS Junior School",
+        location: "Lahore",
+        disciplines: "Architecture · Education",
+        recognition: "Nominated for the Aga Khan Award for Architecture.",
+        imageKey: "architecture",
+        href: "/projects#architecture",
+      },
+      {
+        name: "Beautification & Development Plan of Peshawar",
+        location: "Peshawar",
+        disciplines: "Urban Planning",
+        recognition: "Asian Townscape Award, 2016.",
+        imageKey: "conservation",
+        href: "/projects#urban-planning",
+      },
+      {
+        name: "Hussain Agahi Urban Renewal",
+        location: "Multan",
+        disciplines: "Urban Renewal",
+        recognition: "Nominated for the Aga Khan Award for Architecture.",
+        imageKey: "architecture",
+        href: "/projects#urban-planning",
+      },
+      {
+        name: "Services Club",
+        location: "Multan",
+        disciplines: "Conservation & Restoration",
+        recognition:
+          "ARCASIA Award for Architectural Excellence in Conservation, 1999–2000.",
+        imageKey: "interiors",
+        href: "/projects#conservation",
+      },
+      {
+        name: "USAID Schools",
+        location: "Bagh District, AJK",
+        disciplines: "Architecture · Education",
+        recognition: "Design-Build Institute of America Honor Award, 2012.",
+        imageKey: "delivery",
+        href: "/projects#project-management",
+      },
+      {
+        name: "Master Plan of Skardu & Khaplu",
+        location: "Gilgit-Baltistan",
+        disciplines: "Regional Planning",
+        recognition:
+          "Planning for settlements within the distinctive geographic and environmental context of northern Pakistan.",
+        imageKey: "delivery",
+        href: "/projects#urban-planning",
+      },
+    ],
   },
   collaborations: {
     label: "Clients / Collaborations",
@@ -50,14 +135,10 @@ export const homeContent = {
     ],
   },
   contact: {
-    label: "Contact",
-    title: "A clear entry point for prospective clients, institutions, and collaborators.",
-    description:
-      "The first version keeps contact direct and credible, using the public details currently listed on Unicon's website.",
     panel: {
-      title: "Begin a Conversation",
+      title: "Start a conversation.",
       description:
-        "Use this area for project inquiries, institutional collaborations, planning studies, or conservation and building-related commissions.",
+        "For project enquiries, collaborations or further information about our work, contact our Lahore office.",
       email: "uniconconsulting@gmail.com",
       phone: "+92 42 35711390-93",
       address: ["34-A Main Gulberg", "Lahore", "Pakistan"],

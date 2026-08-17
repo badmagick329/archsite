@@ -20,10 +20,11 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
 
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-border/70">
+      <header className="border-b border-white/10 bg-[oklch(0.34_0.09_42)] text-white shadow-[0_8px_30px_rgba(42,25,18,0.16)]">
+        <div className="h-1.5 bg-primary" />
         <div className="mx-auto w-full max-w-7xl px-6 py-5 lg:px-10">
           <div className="flex items-center justify-between gap-6">
-            <Link href="/" className="relative block h-9 w-36 sm:h-10 sm:w-40">
+            <Link href="/" className="relative block h-9 w-36 brightness-0 invert sm:h-10 sm:w-40">
               <Image
                 src={uniconImages.logo.src}
                 alt={uniconImages.logo.alt}
@@ -42,8 +43,8 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
                     key={item.href}
                     href={item.href}
                     className={cn(
-                      "border-b border-transparent pb-1 text-muted-foreground transition-colors hover:text-foreground",
-                      isActive && "border-foreground text-foreground",
+                      "border-b border-transparent pb-1 text-white/70 transition-colors hover:text-white",
+                      isActive && "border-white text-white",
                     )}
                   >
                     {item.label}
@@ -53,9 +54,9 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
             </nav>
             <Button
               type="button"
-              variant="outline"
+              variant="ghost"
               size="sm"
-              className="lg:hidden"
+              className="border border-white/25 text-white hover:bg-white/10 hover:text-white lg:hidden"
               aria-expanded={menuOpen}
               aria-label={menuOpen ? "Close menu" : "Open menu"}
               onClick={() => setMenuOpen((open) => !open)}
@@ -65,7 +66,7 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
             </Button>
           </div>
           {menuOpen ? (
-            <nav className="mt-4 grid gap-px border border-border/70 bg-border/70 lg:hidden">
+            <nav className="mt-4 grid gap-px border border-white/15 bg-white/15 lg:hidden">
               {siteNavigation.map((item) => {
                 const isActive = currentPath === item.href;
 
@@ -75,8 +76,8 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
                     className={cn(
-                      "bg-background px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground transition-colors hover:text-foreground",
-                      isActive && "text-foreground",
+                      "bg-[oklch(0.34_0.09_42)] px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white/70 transition-colors hover:bg-white/5 hover:text-white",
+                      isActive && "text-white",
                     )}
                   >
                     {item.label}
@@ -89,17 +90,17 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
       </header>
       <div>{children}</div>
       <footer className="border-t border-border/70">
-        <div className="bg-foreground text-background">
+        <div className="bg-[oklch(0.34_0.09_42)] text-white">
           <div className="mx-auto grid w-full max-w-7xl gap-8 px-6 py-10 sm:grid-cols-[1.1fr_1fr] lg:px-10 lg:py-14">
             <div>
               <div className="relative h-10 w-40 brightness-0 invert">
                 <Image src={uniconImages.logo.src} alt={uniconImages.logo.alt} fill sizes="160px" className="object-contain object-left" />
               </div>
-              <p className="mt-5 max-w-md text-sm leading-7 text-background/80">Architecture, engineering, planning, and implementation support from Lahore.</p>
+              <p className="mt-5 max-w-md text-sm leading-7 text-white/80">Architecture, engineering, planning, and implementation support from Lahore.</p>
             </div>
-            <div className="grid gap-5 text-sm leading-7 text-background/85 sm:grid-cols-2">
-              <div className="grid content-start gap-3"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-background/60">Contact</p><a className="flex items-center gap-3 hover:text-background" href="mailto:uniconconsulting@gmail.com"><Mail className="size-4 shrink-0" />uniconconsulting@gmail.com</a><a className="flex items-center gap-3 font-medium text-background underline underline-offset-4 hover:no-underline" href="tel:+924235711390"><Phone className="size-4 shrink-0" />+92 42 35711390-93</a></div>
-              <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-background/60">Office</p><address className="mt-3 flex items-start gap-3 not-italic"><MapPin className="mt-1 size-4 shrink-0" /><span>34-A Main Gulberg<br />Lahore, Pakistan</span></address></div>
+            <div className="grid gap-5 text-sm leading-7 text-white/85 sm:grid-cols-2">
+              <div className="grid content-start gap-3"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Contact</p><a className="flex items-center gap-3 hover:text-white" href="mailto:uniconconsulting@gmail.com"><Mail className="size-4 shrink-0" />uniconconsulting@gmail.com</a><a className="flex items-center gap-3 font-medium text-white underline underline-offset-4 hover:no-underline" href="tel:+924235711390"><Phone className="size-4 shrink-0" />+92 42 35711390-93</a></div>
+              <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Office</p><address className="mt-3 flex items-start gap-3 not-italic"><MapPin className="mt-1 size-4 shrink-0" /><span>34-A Main Gulberg<br />Lahore, Pakistan</span></address></div>
             </div>
           </div>
         </div>

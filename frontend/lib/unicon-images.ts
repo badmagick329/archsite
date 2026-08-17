@@ -4,6 +4,13 @@ export type UniconImage = {
   position?: string;
 };
 
+export type UniconImageKey =
+  | "architecture"
+  | "conservation"
+  | "interiors"
+  | "engineering"
+  | "delivery";
+
 export const uniconImages = {
   logo: {
     src: "/images/unicon/logo-mark.webp",
