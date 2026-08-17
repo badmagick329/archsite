@@ -60,19 +60,20 @@ export function PracticeAreaGrid({
             </div>
             <div
               className={cn(
-                "flex min-h-36 flex-1 items-start justify-between gap-4 p-5 text-white sm:p-6",
+                "relative z-10 -my-[3px] ml-6 h-1.5 w-1/4 shrink-0 shadow-[0_2px_5px_rgba(34,24,18,0.16)]",
                 toneClasses[item.tone],
               )}
-            >
+            />
+            <div className="flex min-h-36 flex-1 items-start justify-between gap-4 bg-background p-5 text-foreground sm:p-6">
               <div>
                 <h3 className="font-heading text-2xl font-semibold leading-tight">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-xs font-medium uppercase leading-6 tracking-[0.12em] text-white/80">
+                <p className="mt-3 text-xs font-medium uppercase leading-6 tracking-[0.12em] text-muted-foreground">
                   {item.disciplines}
                 </p>
               </div>
-              <ArrowUpRight className="mt-1 size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 motion-reduce:transform-none" />
+              <ArrowUpRight className="mt-1 size-5 shrink-0 text-foreground transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 motion-reduce:transform-none" />
             </div>
           </Link>
         );

@@ -63,23 +63,15 @@ export default function WhoWeArePage() {
           accent
           className="bg-muted/20"
         >
-          <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.3fr)] lg:gap-14">
-            <ProfilePlaceholder className="min-h-80 border border-border/70 bg-background lg:min-h-[30rem]" />
-            <div className="space-y-5 text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
-              {whoWeAreContent.founder.introduction.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
-            </div>
-          </div>
-          <div className="mt-10 grid border-l border-t border-border/70 md:grid-cols-2 lg:mt-14">
-            {whoWeAreContent.founder.chapters.map((chapter, index) => (
-              <article key={chapter.title} className="border-b border-r border-border/70 bg-background p-6 sm:p-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-4 font-heading text-2xl font-medium">{chapter.title}</h3>
-                <p className="mt-4 text-sm leading-7 text-muted-foreground">{chapter.body}</p>
-              </article>
+          <div className="flow-root text-sm leading-7 text-muted-foreground sm:text-base sm:leading-8">
+            <ProfilePlaceholder className="mb-8 aspect-[4/5] w-full border border-border/70 bg-background md:float-left md:mb-6 md:mr-10 md:w-[38%] lg:w-[34%] xl:w-[30%]" />
+            {[
+              ...whoWeAreContent.founder.introduction,
+              ...whoWeAreContent.founder.chapters.map((chapter) => chapter.body),
+            ].map((paragraph) => (
+              <p key={paragraph} className="mb-5 last:mb-0">
+                {paragraph}
+              </p>
             ))}
           </div>
         </SectionShell>
