@@ -25,15 +25,13 @@ export default function Home() {
         />
 
         <SectionShell title="Five Decades of Practice" accent>
-          <div className="grid gap-px bg-border/70 md:grid-cols-2">
-            <div className="bg-background p-6 sm:p-8">
-              <div className="space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
-                {homeContent.intro.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </div>
+          <div className="max-w-3xl">
+            <div className="space-y-4 text-sm leading-7 text-muted-foreground sm:text-base">
+              {homeContent.intro.paragraphs.map((paragraph) => (
+                <p key={paragraph}>{paragraph}</p>
+              ))}
             </div>
-            <div className="flex items-start bg-muted/35 p-6 sm:p-8">
+            <div className="mt-6 sm:mt-8">
               <Button asChild variant="outline">
                 <Link href="/who-we-are">
                   {homeContent.intro.cta}
