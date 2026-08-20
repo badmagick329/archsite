@@ -11,7 +11,12 @@ export function HomeProjectsPreview({
   return (
     <div className="grid gap-6 md:grid-cols-3">
       {projectTypes.slice(0, 3).map((projectType) => (
-        <ProjectCard key={projectType.slug} projectType={projectType} showLink />
+        <ProjectCard
+          key={projectType.slug}
+          projectType={projectType}
+          project={projectType.projects[0]}
+          showLink
+        />
       ))}
     </div>
   );

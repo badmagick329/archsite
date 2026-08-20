@@ -10,8 +10,8 @@ export default function ProjectsPage() {
       <main>
         <ImageBanner
           eyebrow={projectsContent.header.eyebrow}
-          title="Selected projects and areas of practice."
-          description="A working selection across architecture, planning, engineering, conservation, interiors, and delivery."
+          title={projectsContent.header.title}
+          description={projectsContent.header.description}
           image={uniconImages.delivery}
           tone="strong"
         />

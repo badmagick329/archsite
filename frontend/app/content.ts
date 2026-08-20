@@ -18,22 +18,21 @@ export const homeContent = {
       "Integrated expertise across the built environment, from early planning and design through implementation and delivery.",
     items: [
       {
-        title: "Architecture",
-        disciplines: "Architectural Design · Interior Design",
+        title: "Architecture Design",
+        disciplines: "Buildings · Institutional · Educational",
         imageKey: "architecture",
         href: "/projects#architecture",
         tone: "architecture",
       },
       {
-        title: "Planning",
-        disciplines:
-          "Urban Planning · Regional Planning · Master Planning · Urban Renewal",
+        title: "Urban Planning",
+        disciplines: "Regional · Master Planning · Urban Renewal",
         imageKey: "conservation",
         href: "/projects#urban-planning",
         tone: "planning",
       },
       {
-        title: "Engineering",
+        title: "Engineering Design",
         disciplines: "Civil · Structural · Infrastructure · Building Services",
         imageKey: "engineering",
         href: "/projects#engineering-design",
@@ -47,16 +46,15 @@ export const homeContent = {
         tone: "conservation",
       },
       {
-        title: "Environment",
-        disciplines: "Environmental Planning · Environmental Assessment",
-        imageKey: "delivery",
-        href: "/projects",
-        tone: "environment",
+        title: "Interior Design",
+        disciplines: "Material · Spatial · Functional Detail",
+        imageKey: "interiors",
+        href: "/projects#interior-design",
+        tone: "interiors",
       },
       {
-        title: "Project Delivery",
-        disciplines:
-          "Project Management · Construction Management · Supervision",
+        title: "Project Management",
+        disciplines: "Construction · Coordination · Supervision",
         imageKey: "delivery",
         href: "/projects#project-management",
         tone: "delivery",
@@ -65,7 +63,7 @@ export const homeContent = {
   },
   featuredProjects: {
     description:
-      "Selected work across architecture, planning, conservation and project delivery.",
+      "Selected work across the practice's six areas of expertise.",
     cta: "View All Projects",
     items: [
       {

@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
 import { type ProjectType } from "@/lib/site-data";
 import Image from "next/image";
 import { uniconImages } from "@/lib/unicon-images";
 
 type ProjectCardProps = {
   projectType: ProjectType;
+  project: ProjectType["projects"][number];
   showLink?: boolean;
 };
 
@@ -21,20 +21,16 @@ const projectSurfaceClasses = {
 
 export function ProjectCard({
   projectType,
+  project,
   showLink = false,
 }: ProjectCardProps) {
   const image = uniconImages[projectType.imageKey];
-  const surfaceClass = showLink
-    ? (projectSurfaceClasses[
-        projectType.slug as keyof typeof projectSurfaceClasses
-      ] ?? "bg-card")
-    : "bg-card";
+  const surfaceClass =
+    projectSurfaceClasses[projectType.slug as keyof typeof projectSurfaceClasses] ??
+    "bg-card";
 
-  return (
-    <article
-      id={projectType.slug}
-      className={`overflow-hidden border border-border/70 ${surfaceClass} text-card-foreground`}
-    >
+  const content = (
+    <>
       <div className="relative aspect-[4/3] overflow-hidden">
         <Image
           src={image.src}
@@ -45,29 +41,43 @@ export function ProjectCard({
           style={{ objectPosition: image.position }}
         />
       </div>
-      <div className="flex h-full flex-col p-6 sm:p-7">
+      <div className="flex min-h-72 flex-1 flex-col p-6 sm:p-7">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
           {projectType.title}
         </p>
         <h3 className="mt-3 font-heading text-2xl leading-tight">
-          {projectType.project.name}
+          {project.name}
         </h3>
         <p className="mt-2 text-sm text-muted-foreground">
-          {projectType.project.location}
+          {project.location}
         </p>
         <p className="mt-5 text-sm leading-7 text-muted-foreground">
-          {projectType.project.description}
+          {project.description}
         </p>
         {showLink ? (
-          <Link
-            href={`/projects#${projectType.slug}`}
-            className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold uppercase tracking-[0.14em] hover:text-primary"
-          >
+          <span className="mt-auto inline-flex items-center gap-2 pt-6 text-sm font-semibold uppercase tracking-[0.14em] text-foreground">
             Explore {projectType.title}
-            <ArrowRight className="size-4" />
-          </Link>
+            <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 motion-reduce:transform-none" />
+          </span>
         ) : null}
       </div>
+    </>
+  );
+
+  return (
+    <article
+      className={`overflow-hidden border border-border/70 ${surfaceClass} text-card-foreground ${showLink ? "group shadow-[0_12px_35px_rgba(34,24,18,0.06)] transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(34,24,18,0.13)] motion-reduce:transform-none motion-reduce:transition-none" : ""}`}
+    >
+      {showLink ? (
+        <Link
+          href={`/projects#${projectType.slug}`}
+          className="flex h-full flex-col focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-primary"
+        >
+          {content}
+        </Link>
+      ) : (
+        content
+      )}
     </article>
   );
 }

@@ -4,13 +4,13 @@ export type ProjectType = {
   label: string;
   summary: string;
   imageKey: "architecture" | "conservation" | "interiors" | "engineering" | "delivery";
-  project: {
+  projects: readonly {
     name: string;
     location: string;
     status: string;
     year: string;
     description: string;
-  };
+  }[];
 };
 
 export const siteNavigation = [

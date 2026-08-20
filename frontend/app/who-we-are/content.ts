@@ -43,6 +43,24 @@ export const whoWeAreContent = {
       },
     ],
   },
+  team: {
+    label: "Team",
+    title: "A multidisciplinary team.",
+    members: [
+      { name: "FARRUKH JAMAL", role: "PROJECTS MANAGER" },
+      { name: "RABIA QURESHI", role: "ARCHITECT" },
+      { name: "AMNA SAEED", role: "ARCHITECT" },
+      { name: "RANA HABIB AHMAD", role: "STRUCTURE ENGINEER" },
+      { name: "MAQSOOD AHMAD", role: "ELECTRICAL ENGINEER" },
+      { name: "SYED SHAHZAD RAZA", role: "HVAC & MECHANICAL ENGINEER" },
+      {
+        name: "MUHAMMAD ATIF ABDUL JABBAR",
+        role: "MANAGER FINANCE/COMPANY SECRETARY",
+      },
+      { name: "TAHIR AMIN", role: "ASSISTANT ARCHITECT" },
+      { name: "BABAR ANJUM", role: "ARCHITECT" },
+    ],
+  },
   recognition: {
     label: "Recognition",
     title: "Awards and Recognition",
@@ -53,16 +71,28 @@ export const whoWeAreContent = {
         year: "1999–2000",
         award: "ARCASIA Award for Architecture — Conservation",
         project: "Services Club, Multan",
+        image: {
+          src: "/images/unicon/awards/arcasia-services-club.webp",
+          alt: "ARCASIA award certificate for Services Club, Multan",
+        },
       },
       {
         year: "2012",
         award: "Honor Award — Design-Build Institute of America",
-        project: "Pakistan Earthquake Reconstruction & Recovery Program",
+        project: "Earthquake-resistant schools programme",
+        image: {
+          src: "/images/unicon/awards/dbia-schools-programme.webp",
+          alt: "DBIA Honor Award for earthquake-resistant schools in Pakistan",
+        },
       },
       {
         year: "2016",
-        award: "City Townscape Award",
-        project: "Beautification & Development Plan of Peshawar",
+        award: "Asian Townscape Award",
+        project: "Peshawar beautification plan",
+        image: {
+          src: "/images/unicon/awards/asian-townscape-peshawar.webp",
+          alt: "Asian Townscape Award letter for the Peshawar beautification plan",
+        },
       },
       {
         year: "Nomination",

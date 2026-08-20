@@ -18,7 +18,7 @@ type PracticeArea = {
     | "planning"
     | "engineering"
     | "conservation"
-    | "environment"
+    | "interiors"
     | "delivery";
 };
 
@@ -27,7 +27,7 @@ const toneClasses = {
   planning: "bg-[oklch(0.48_0.07_112)]",
   engineering: "bg-[oklch(0.43_0.07_220)]",
   conservation: "bg-[oklch(0.48_0.1_48)]",
-  environment: "bg-[oklch(0.46_0.07_151)]",
+  interiors: "bg-[oklch(0.49_0.085_20)]",
   delivery: "bg-[oklch(0.4_0.045_43)]",
 } as const;
 

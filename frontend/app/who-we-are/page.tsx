@@ -77,6 +77,26 @@ export default function WhoWeArePage() {
         </SectionShell>
 
         <SectionShell
+          title={whoWeAreContent.team.title}
+          label={whoWeAreContent.team.label}
+          layout="stacked"
+          accent
+        >
+          <div className="grid gap-px border border-border/70 bg-border/70 sm:grid-cols-2 xl:grid-cols-3">
+            {whoWeAreContent.team.members.map((member) => (
+              <article key={member.name} className="bg-background px-5 py-6 sm:px-6">
+                <h3 className="font-heading text-lg font-medium leading-snug text-foreground">
+                  {member.name}
+                </h3>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+                  {member.role}
+                </p>
+              </article>
+            ))}
+          </div>
+        </SectionShell>
+
+        <SectionShell
           title={whoWeAreContent.recognition.title}
           label={whoWeAreContent.recognition.label}
           description={whoWeAreContent.recognition.description}
