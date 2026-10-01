@@ -1,7 +1,6 @@
 # Dependencies
 node_modules
 frontend/node_modules
-backend/node_modules
 .pnpm-store
 
 # Next.js
@@ -38,7 +37,6 @@ pnpm-debug.log*
 .vscode
 
 # Local project and deployment files
-notes
 
 # Git
 .git

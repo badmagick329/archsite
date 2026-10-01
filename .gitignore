@@ -5,10 +5,7 @@ frontend/.next/
 frontend/node_modules/
 frontend/.vercel/
 
-backend/node_modules/
-
 .DS_Store
-notes/
 
-# Private deployment tools and credentials
+# Private agent docs, deploy kit and client inputs
 .ignore/
