@@ -124,10 +124,10 @@ export const homeContent = {
     description:
       "Experience across public institutions, educational clients, financial organisations, planning authorities, and private-sector development.",
     items: [
-      { label: "UNICEF", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/UNICEF_Logo.svg" },
-      { label: "UNESCO", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/UNESCO_logo.svg" },
-      { label: "USAID", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/USAID-Identity.svg" },
-      { label: "World Bank", logo: "https://commons.wikimedia.org/wiki/Special:FilePath/The_World_Bank_logo.svg" },
+      { label: "UNICEF", logo: "/images/unicon/clients/unicef.svg" },
+      { label: "UNESCO", logo: "/images/unicon/clients/unesco.svg" },
+      { label: "USAID", logo: "/images/unicon/clients/usaid.webp" },
+      { label: "World Bank", logo: "/images/unicon/clients/world-bank.svg" },
       { label: "National Highway Authority" },
       { label: "Capital Development Authority" },
     ],
