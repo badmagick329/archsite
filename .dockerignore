@@ -43,3 +43,6 @@ notes
 # Git
 .git
 .gitignore
+
+# Private deployment tools and credentials
+.ignore/
