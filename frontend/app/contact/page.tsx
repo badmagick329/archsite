@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { contactContent } from "@/app/contact/content";
 import { ContactResponseGrid } from "@/app/contact/_components/contact-response-grid";
 import { ContactPanel } from "@/components/contact-panel";
@@ -6,9 +8,11 @@ import { SectionShell } from "@/components/section-shell";
 import { SiteShell } from "@/components/site-shell";
 import { uniconImages } from "@/lib/unicon-images";
 
+export const metadata: Metadata = contactContent.meta;
+
 export default function ContactPage() {
   return (
-    <SiteShell currentPath="/contact">
+    <SiteShell>
       <main>
         <ImageBanner
           eyebrow={contactContent.header.eyebrow}
@@ -25,10 +29,6 @@ export default function ContactPage() {
           <ContactPanel
             title={contactContent.contactSection.panel.title}
             description={contactContent.contactSection.panel.description}
-            email={contactContent.contactSection.panel.email}
-            phone={contactContent.contactSection.panel.phone}
-            address={[...contactContent.contactSection.panel.address]}
-            showDetails={false}
           />
         </SectionShell>
 

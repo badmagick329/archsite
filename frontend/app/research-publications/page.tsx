@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { ArchiveList } from "@/app/research-publications/_components/archive-list";
 import { researchPublicationsContent } from "@/app/research-publications/content";
 import { ImageBanner } from "@/components/image-banner";
@@ -5,9 +7,11 @@ import { SectionShell } from "@/components/section-shell";
 import { SiteShell } from "@/components/site-shell";
 import { uniconImages } from "@/lib/unicon-images";
 
+export const metadata: Metadata = researchPublicationsContent.meta;
+
 export default function ResearchPublicationsPage() {
   return (
-    <SiteShell currentPath="/research-publications">
+    <SiteShell>
       <main>
         <ImageBanner
           eyebrow={researchPublicationsContent.header.eyebrow}

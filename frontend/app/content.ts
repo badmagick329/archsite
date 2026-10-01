@@ -137,9 +137,6 @@ export const homeContent = {
       title: "Start a conversation.",
       description:
         "For project enquiries, collaborations or further information about our work, contact our Lahore office.",
-      email: "uniconconsulting@gmail.com",
-      phone: "+92 42 35711390-93",
-      address: ["34-A Main Gulberg", "Lahore", "Pakistan"],
     },
   },
 } as const;

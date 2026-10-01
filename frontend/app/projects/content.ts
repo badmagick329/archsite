@@ -1,6 +1,11 @@
 import { type ProjectType } from "@/lib/site-data";
 
 export const projectsContent = {
+  meta: {
+    title: "Projects",
+    description:
+      "Selected Unicon projects across architecture design, urban planning, engineering design, conservation, interior design and project management.",
+  },
   header: {
     eyebrow: "Projects",
     title:

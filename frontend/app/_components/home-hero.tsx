@@ -36,7 +36,7 @@ export function HomeHero({ slides, titleAccent, title, description, cta }: HomeH
       {slides.map((slide, index) => (
         <CarouselSlide key={slide.src}>
           <div className="relative min-h-[34rem] sm:min-h-[42rem] lg:min-h-[46rem]">
-            <Image src={slide.src} alt={slide.alt} fill preload={index === 0} loading={index === 0 ? undefined : "eager"} sizes="100vw" className="object-cover" style={{ objectPosition: slide.position }} />
+            <Image src={slide.src} alt={slide.alt} fill preload={index === 0} loading={index === 0 ? undefined : "eager"} fetchPriority={index === 0 ? undefined : "low"} sizes="100vw" className="object-cover" style={{ objectPosition: slide.position }} />
             <div className="absolute inset-0 bg-linear-to-r from-black/85 via-black/58 to-black/10" />
           </div>
         </CarouselSlide>

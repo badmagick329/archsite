@@ -1,4 +1,9 @@
 export const researchPublicationsContent = {
+  meta: {
+    title: "Research & Publications",
+    description:
+      "Writing, talks and project notes from Unicon Consulting on architecture, planning, conservation and implementation.",
+  },
   header: {
     eyebrow: "Research & Publications",
     title: "An editorial archive for writing, talks, project notes, and future public documentation.",

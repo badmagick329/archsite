@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import Image from "next/image";
 
 import { RecognitionList } from "@/app/who-we-are/_components/recognition-list";
@@ -8,9 +10,11 @@ import { SectionShell } from "@/components/section-shell";
 import { SiteShell } from "@/components/site-shell";
 import { uniconImages } from "@/lib/unicon-images";
 
+export const metadata: Metadata = whoWeAreContent.meta;
+
 export default function WhoWeArePage() {
   return (
-    <SiteShell currentPath="/who-we-are">
+    <SiteShell>
       <main>
         <ImageBanner
           eyebrow={whoWeAreContent.header.eyebrow}

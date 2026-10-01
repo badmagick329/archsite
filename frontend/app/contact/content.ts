@@ -1,4 +1,9 @@
 export const contactContent = {
+  meta: {
+    title: "Contact",
+    description:
+      "Contact Unicon Consulting's Lahore office about commissions, planning studies and collaborations.",
+  },
   header: {
     eyebrow: "Contact",
     title:
@@ -18,9 +23,6 @@ export const contactContent = {
       title: "Start an Inquiry",
       description:
         "Share a short note about the project, location, timeline, or collaboration context. This panel is designed to work for public, private, educational, and institutional clients alike.",
-      email: "uniconconsulting@gmail.com",
-      phone: "+92 42 35711390-93",
-      address: ["34-A Main Gulberg", "Lahore", "Pakistan"],
     },
   },
   responseSection: {

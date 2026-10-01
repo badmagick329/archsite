@@ -1,7 +1,7 @@
 "use client";
 
 import useEmblaCarousel from "embla-carousel-react";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Pause, Play } from "lucide-react";
 import { type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 
 import { cn } from "@/lib/utils";
@@ -24,6 +24,7 @@ export function Carousel({
   const [viewportRef, api] = useEmblaCarousel({ loop: true });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [userPaused, setUserPaused] = useState(false);
   const selectedIndexRef = useRef(0);
   const pointerPaused = useRef(false);
   const focusPaused = useRef(false);
@@ -56,14 +57,14 @@ export function Carousel({
   }, [api, selectSlide]);
 
   useEffect(() => {
-    if (!api || reducedMotion) return;
+    if (!api || reducedMotion || userPaused) return;
     const timer = window.setInterval(() => {
       if (!pointerPaused.current && !focusPaused.current && !pageHidden.current) {
         api.scrollNext();
       }
     }, interval);
     return () => window.clearInterval(timer);
-  }, [api, interval, reducedMotion]);
+  }, [api, interval, reducedMotion, userPaused]);
 
   useEffect(() => {
     if (!api) return;
@@ -120,6 +121,11 @@ export function Carousel({
           ))}
         </div>
         <div className="flex gap-px bg-white/25">
+          {reducedMotion ? null : (
+            <button type="button" onClick={() => setUserPaused((paused) => !paused)} className="bg-black/55 p-3 text-white transition-colors hover:bg-black/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label={userPaused ? "Play slideshow" : "Pause slideshow"}>
+              {userPaused ? <Play className="size-4" /> : <Pause className="size-4" />}
+            </button>
+          )}
           <button type="button" onClick={goPrevious} className="bg-black/55 p-3 text-white transition-colors hover:bg-black/75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" aria-label="Previous slide">
             <ArrowLeft className="size-4" />
           </button>

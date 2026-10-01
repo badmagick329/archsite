@@ -2,20 +2,21 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Mail, MapPin, Menu, Phone, X } from "lucide-react";
 import { type ReactNode, useState } from "react";
 
 import { Button } from "@/components/ui/button";
-import { siteNavigation } from "@/lib/site-data";
+import { contactDetails, siteNavigation } from "@/lib/site-data";
 import { cn } from "@/lib/utils";
 import { uniconImages } from "@/lib/unicon-images";
 
 type SiteShellProps = {
   children: ReactNode;
-  currentPath?: string;
 };
 
-export function SiteShell({ children, currentPath }: SiteShellProps) {
+export function SiteShell({ children }: SiteShellProps) {
+  const currentPath = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -99,8 +100,8 @@ export function SiteShell({ children, currentPath }: SiteShellProps) {
               <p className="mt-5 max-w-md text-sm leading-7 text-white/80">Architecture, engineering, planning, and implementation support from Lahore.</p>
             </div>
             <div className="grid gap-5 text-sm leading-7 text-white/85 sm:grid-cols-2">
-              <div className="grid content-start gap-3"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Contact</p><a className="flex items-center gap-3 hover:text-white" href="mailto:uniconconsulting@gmail.com"><Mail className="size-4 shrink-0" />uniconconsulting@gmail.com</a><a className="flex items-center gap-3 font-medium text-white underline underline-offset-4 hover:no-underline" href="tel:+924235711390"><Phone className="size-4 shrink-0" />+92 42 35711390-93</a></div>
-              <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Office</p><address className="mt-3 flex items-start gap-3 not-italic"><MapPin className="mt-1 size-4 shrink-0" /><span>34-A Main Gulberg<br />Lahore, Pakistan</span></address></div>
+              <div className="grid content-start gap-3"><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Contact</p><a className="flex items-center gap-3 hover:text-white" href={`mailto:${contactDetails.email}`}><Mail className="size-4 shrink-0" />{contactDetails.email}</a><a className="flex items-center gap-3 font-medium text-white underline underline-offset-4 hover:no-underline" href={contactDetails.phoneHref}><Phone className="size-4 shrink-0" />{contactDetails.phone}</a></div>
+              <div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/60">Office</p><address className="mt-3 flex items-start gap-3 not-italic"><MapPin className="mt-1 size-4 shrink-0" /><span>{contactDetails.address.map((line) => <span key={line} className="block">{line}</span>)}</span></address></div>
             </div>
           </div>
         </div>

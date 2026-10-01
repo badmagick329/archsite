@@ -1,4 +1,9 @@
 export const whoWeAreContent = {
+  meta: {
+    title: "Who We Are",
+    description:
+      "Unicon Consulting, a Lahore architecture, planning and engineering practice founded in 1975 by Parvez Latif Qureshi: history, team and awards.",
+  },
   header: {
     eyebrow: "Who We Are",
     title: "Architecture, planning and development since 1975.",

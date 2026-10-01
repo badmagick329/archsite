@@ -14,7 +14,7 @@ import { uniconImages } from "@/lib/unicon-images";
 
 export default function Home() {
   return (
-    <SiteShell currentPath="/">
+    <SiteShell>
       <main>
         <HomeHero
           slides={uniconImages.heroSlides}
@@ -78,10 +78,6 @@ export default function Home() {
           <ContactPanel
             title={homeContent.contact.panel.title}
             description={homeContent.contact.panel.description}
-            email={homeContent.contact.panel.email}
-            phone={homeContent.contact.panel.phone}
-            address={[...homeContent.contact.panel.address]}
-            showDetails={false}
           />
         </SectionShell>
       </main>
