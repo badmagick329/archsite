@@ -31,7 +31,7 @@ export const researchPublicationsContent = {
         title: "Regional Planning, Public Space, and Implementation",
         year: "Placeholder",
         summary:
-          "A sample lecture placeholder shaped around urban and regional planning themes that already appear within Unicon's public portfolio categories.",
+          "A sample lecture placeholder shaped around urban and regional planning themes that already appear within Unicon's Areas of Practice.",
       },
       {
         type: "Project Note",

@@ -63,7 +63,7 @@ export const homeContent = {
   },
   featuredProjects: {
     description:
-      "Selected work across the practice's six areas of expertise.",
+      "Selected work across the practice's six Areas of Practice.",
     cta: "View All Projects",
     items: [
       {
@@ -119,10 +119,6 @@ export const homeContent = {
     ],
   },
   collaborations: {
-    label: "Clients / Collaborations",
-    title: "A place to signal institutional clients and working relationships around the practice.",
-    description:
-      "Experience across public institutions, educational clients, financial organisations, planning authorities, and private-sector development.",
     items: [
       { label: "UNICEF", logo: "/images/unicon/clients/unicef.svg" },
       { label: "UNESCO", logo: "/images/unicon/clients/unesco.svg" },

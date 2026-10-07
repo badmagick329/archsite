@@ -73,7 +73,7 @@ export const projectsContent = {
       summary:
         "Conservation, restoration, and adaptive reuse work that balances historic fabric with contemporary use and public access.",
       projects: [{
-        name: "Garrison Club",
+        name: "Services Club",
         location: "Multan, Pakistan",
         status: "Conservation and Restoration",
         year: "ARCASIA Award Reference",
